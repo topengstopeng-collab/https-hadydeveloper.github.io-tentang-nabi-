@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TENTANG NABI ﷺ</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    min-height:100vh;
+    color:#f5f1df;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(212,175,55,.12), transparent 25%),
+        radial-gradient(circle at 85% 80%, rgba(0,255,170,.08), transparent 30%),
+        linear-gradient(135deg,#031c16,#062d23,#03150f);
+    overflow-x:hidden;
+}
+
+/* BACKGROUND ORNAMEN */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.08;
+    background-image:
+        linear-gradient(30deg,#d4af37 12%,transparent 12.5%,transparent 87%,#d4af37 87.5%),
+        linear-gradient(150deg,#d4af37 12%,transparent 12.5%,transparent 87%,#d4af37 87.5%);
+    background-size:70px 120px;
+    z-index:-1;
+}
+
+/* HEADER */
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(2,24,18,.9);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid rgba(212,175,55,.35);
+    box-shadow:0 5px 30px rgba(0,0,0,.3);
+}
+
+.header-inner{
+    width:min(1150px,92%);
+    margin:auto;
+    min-height:78px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-symbol{
+    width:48px;
+    height:48px;
+    border:2px solid #d4af37;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#d4af37;
+    font-size:24px;
+    box-shadow:0 0 20px rgba(212,175,55,.2);
+}
+
+.logo h1{
+    font-size:20px;
+    color:#d4af37;
+    letter-spacing:2px;
+}
+
+.logo span{
+    display:block;
+    font-size:11px;
+    color:#b8c8c0;
+    margin-top:3px;
+}
+
+.controls{
+    display:flex;
+    gap:8px;
+}
+
+.icon-btn{
+    border:1px solid rgba(212,175,55,.4);
+    background:rgba(255,255,255,.04);
+    color:#f5f1df;
+    border-radius:10px;
+    padding:10px 13px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.icon-btn:hover{
+    background:#d4af37;
+    color:#082019;
+    transform:translateY(-2px);
+}
+
+/* PROGRESS */
+.progress-area{
+    width:min(1150px,92%);
+    margin:15px auto 0;
+}
+
+.progress-top{
+    display:flex;
+    justify-content:space-between;
+    font-size:12px;
+    color:#aabbb4;
+    margin-bottom:7px;
+}
+
+.progress-bar{
+    height:5px;
+    background:rgba(255,255,255,.1);
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.progress-fill{
+    height:100%;
+    width:20%;
+    background:linear-gradient(90deg,#b18b22,#f2d36b);
+    border-radius:20px;
+    transition:.6s;
+}
+
+/* CONTAINER */
+.container{
+    width:min(1050px,92%);
+    margin:35px auto 80px;
+}
+
+/* PAGE */
+.page{
+    display:none;
+    animation:pageIn .6s ease;
+}
+
+.page.active{
+    display:block;
+}
+
+@keyframes pageIn{
+    from{
+        opacity:0;
+        transform:translateX(35px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:35px 20px 25px;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 18px;
+    border:1px solid rgba(212,175,55,.45);
+    border-radius:50px;
+    color:#e4c75c;
+    font-size:12px;
+    letter-spacing:2px;
+    margin-bottom:20px;
+    background:rgba(212,175,55,.06);
+}
+
+.hero h2{
+    font-size:clamp(35px,7vw,70px);
+    color:#e4c75c;
+    line-height:1.05;
+    text-shadow:0 0 30px rgba(212,175,55,.18);
+}
+
+.hero .arabic{
+    margin-top:12px;
+    font-size:clamp(24px,4vw,42px);
+    color:#f8f1d4;
+}
+
+.hero p{
+    max-width:700px;
+    margin:20px auto 0;
+    line-height:1.8;
+    color:#c1cec8;
+}
+
+/* CONTENT CARD */
+.story-card{
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(212,175,55,.2);
+    border-radius:24px;
+    padding:30px;
+    margin:25px 0;
+    box-shadow:0 20px 50px rgba(0,0,0,.18);
+    position:relative;
+    overflow:hidden;
+}
+
+.story-card::before{
+    content:"";
+    position:absolute;
+    width:140px;
+    height:140px;
+    border:1px solid rgba(212,175,55,.15);
+    border-radius:50%;
+    right:-70px;
+    top:-70px;
+}
+
+.story-card h3{
+    color:#e5c95c;
+    font-size:22px;
+    margin-bottom:18px;
+}
+
+.story-card p{
+    font-size:16px;
+    line-height:2;
+    color:#e0e7e3;
+    margin-bottom:15px;
+}
+
+.story-card p:last-child{
+    margin-bottom:0;
+}
+
+strong{
+    color:#f1d56a;
+}
+
+/* QUOTE */
+.quote{
+    margin:25px 0;
+    padding:22px 25px;
+    border-left:4px solid #d4af37;
+    background:rgba(212,175,55,.07);
+    border-radius:0 15px 15px 0;
+}
+
+.quote .arabic{
+    font-size:28px;
+    color:#f3dc83;
+    margin-bottom:8px;
+}
+
+.quote p{
+    margin:0;
+    font-style:italic;
+}
+
+/* PAGE NUMBER */
+.page-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.page-title h2{
+    font-size:clamp(25px,4vw,40px);
+    color:#e5c95c;
+}
+
+.page-number{
+    min-width:45px;
+    height:45px;
+    border-radius:50%;
+    border:1px solid #d4af37;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#e5c95c;
+    font-weight:bold;
+}
+
+/* NAV BUTTON */
+.navigation{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin-top:30px;
+}
+
+.nav-btn{
+    border:none;
+    padding:15px 25px;
+    border-radius:14px;
+    cursor:pointer;
+    font-weight:bold;
+    font-size:14px;
+    transition:.3s;
+}
+
+.prev{
+    background:rgba(255,255,255,.08);
+    color:#ddd;
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.next{
+    background:linear-gradient(135deg,#d4af37,#f0d36c);
+    color:#10251d;
+    box-shadow:0 8px 25px rgba(212,175,55,.18);
+}
+
+.nav-btn:hover{
+    transform:translateY(-3px);
+}
+
+.next:hover{
+    box-shadow:0 12px 30px rgba(212,175,55,.3);
+}
+
+/* TIMELINE */
+.timeline{
+    position:relative;
+    margin-top:25px;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    left:20px;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:linear-gradient(#d4af37,rgba(212,175,55,.05));
+}
+
+.timeline-item{
+    position:relative;
+    padding-left:60px;
+    margin-bottom:30px;
+}
+
+.timeline-dot{
+    position:absolute;
+    left:9px;
+    top:4px;
+    width:23px;
+    height:23px;
+    border-radius:50%;
+    background:#d4af37;
+    box-shadow:0 0 0 6px rgba(212,175,55,.1);
+}
+
+.timeline-item h3{
+    color:#e4c75c;
+    margin-bottom:7px;
+}
+
+.timeline-item p{
+    line-height:1.8;
+    color:#cbd6d1;
+}
+
+/* FOOTER */
+footer{
+    border-top:1px solid rgba(212,175,55,.2);
+    background:rgba(0,0,0,.15);
+    text-align:center;
+    padding:30px 15px;
+    color:#8fa29a;
+    font-size:13px;
+}
+
+.footer-title{
+    color:#d4af37;
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+/* TOAST */
+.toast{
+    position:fixed;
+    left:50%;
+    bottom:25px;
+    transform:translate(-50%,120px);
+    background:#102c22;
+    border:1px solid rgba(212,175,55,.4);
+    color:#f4e8b0;
+    padding:13px 20px;
+    border-radius:50px;
+    z-index:2000;
+    opacity:0;
+    transition:.4s;
+}
+
+.toast.show{
+    transform:translate(-50%,0);
+    opacity:1;
+}
+
+/* RESPONSIVE */
+@media(max-width:650px){
+    .header-inner{
+        min-height:68px;
+    }
+
+    .logo h1{
+        font-size:15px;
+    }
+
+    .logo span{
+        font-size:9px;
+    }
+
+    .logo-symbol{
+        width:40px;
+        height:40px;
+        font-size:19px;
+    }
+
+    .controls .icon-btn{
+        padding:8px 10px;
+    }
+
+    .story-card{
+        padding:21px;
+        border-radius:18px;
+    }
+
+    .story-card p{
+        font-size:15px;
+        line-height:1.9;
+    }
+
+    .navigation{
+        position:sticky;
+        bottom:10px;
+        z-index:50;
+    }
+
+    .nav-btn{
+        flex:1;
+        padding:13px 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+
+        <div class="logo">
+            <div class="logo-symbol">☾</div>
+
+            <div>
+                <h1>TENTANG NABI ﷺ</h1>
+                <span>Sejarah dan keteladanan Nabi Muhammad ﷺ</span>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="icon-btn" onclick="readPage()" title="Baca halaman">🔊</button>
+            <button class="icon-btn" onclick="stopReading()" title="Berhenti">⏹</button>
+        </div>
+
+    </div>
+
+    <div class="progress-area">
+        <div class="progress-top">
+            <span id="progressText">Halaman 1 dari 5</span>
+            <span id="progressPercent">20%</span>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+        </div>
+    </div>
+</header>
+
+
+<main class="container">
+
+<!-- =====================================================
+     HALAMAN 1
+===================================================== -->
+
+<section class="page active" id="page1">
+
+    <div class="hero">
+
+        <div class="badge">KISAH NABI MUHAMMAD ﷺ</div>
+
+        <h2>TENTANG NABI</h2>
+
+        <div class="arabic">محمد ﷺ</div>
+
+        <p>
+            Kisah kehidupan Nabi Muhammad ﷺ, mulai dari masa kecil,
+            kehidupan beliau sebelum kenabian, hingga perjuangan dakwah
+            dan teladan yang beliau tinggalkan bagi umat Islam.
+        </p>
+
+    </div>
+
+
+    <div class="story-card">
+
+        <div class="page-title">
+            <h2>Masa Kecil Nabi</h2>
+            <div class="page-number">01</div>
+        </div>
+
+        <p>
+            Nabi Muhammad ﷺ adalah nabi dan rasul terakhir yang diutus
+            oleh Allah SWT untuk menyampaikan ajaran Islam kepada seluruh
+            umat manusia. Beliau lahir di <strong>Makkah</strong> pada
+            Tahun Gajah, sekitar tahun 570 Masehi. Ayah beliau bernama
+            <strong>Abdullah bin Abdul Muthalib</strong>, sedangkan ibunya
+            bernama <strong>Aminah binti Wahab</strong>.
+        </p>
+
+        <p>
+            Ayah Nabi Muhammad ﷺ meninggal dunia sebelum beliau lahir.
+            Karena itu, Nabi Muhammad ﷺ lahir dalam keadaan yatim.
+            Ketika masih kecil, beliau diasuh oleh ibu susunya,
+            <strong>Halimah Sa'diyah</strong>, sesuai kebiasaan masyarakat
+            Arab pada masa itu.
+        </p>
+
+        <p>
+            Nabi Muhammad ﷺ dikenal sebagai anak yang baik, jujur, dan
+            memiliki akhlak yang mulia. Setelah beberapa tahun bersama
+            Halimah, beliau kembali kepada ibunya, Aminah. Ketika berusia
+            sekitar enam tahun, ibunya meninggal dunia. Setelah itu,
+            beliau dirawat oleh kakeknya, Abdul Muthalib.
+        </p>
+
+        <p>
+            Tidak lama kemudian, kakeknya juga meninggal. Pengasuhan
+            Nabi Muhammad ﷺ kemudian dilanjutkan oleh pamannya,
+            <strong>Abu Thalib</strong>. Walaupun hidup dalam keadaan
+            sederhana, Nabi Muhammad ﷺ tumbuh menjadi seseorang yang
+            sabar, bertanggung jawab, dan dapat dipercaya.
+        </p>
+
+        <p>
+            Sejak muda, Nabi Muhammad ﷺ sudah menunjukkan sifat terpuji.
+            Beliau tidak suka berbohong, tidak menyakiti orang lain,
+            dan selalu menjaga amanah. Karena sifat tersebut, masyarakat
+            Makkah memberikan beliau gelar <strong>Al-Amin</strong>,
+            yang berarti <strong>orang yang dapat dipercaya</strong>.
+        </p>
+
+    </div>
+
+
+    <div class="quote">
+        <p>
+            <strong>Al-Amin</strong> — orang yang dapat dipercaya.
+        </p>
+    </div>
+
+
+    <div class="navigation">
+        <button class="nav-btn prev" disabled>← AWAL</button>
+
+        <button class="nav-btn next" onclick="nextPage()">
+            LANJUT KE HALAMAN 2 →
+        </button>
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     HALAMAN 2
+===================================================== -->
+
+<section class="page" id="page2">
+
+    <div class="page-title">
+        <h2>Perdagangan & Gua Hira</h2>
+        <div class="page-number">02</div>
+    </div>
+
+    <div class="story-card">
+
+        <p>
+            Ketika beranjak dewasa, Nabi Muhammad ﷺ bekerja sebagai
+            seorang pedagang. Beliau melakukan perjalanan perdagangan
+            dan dikenal sangat jujur dalam berdagang. Beliau tidak pernah
+            mengurangi timbangan, menipu pembeli, ataupun mengambil
+            keuntungan dengan cara yang tidak benar.
+        </p>
+
+        <p>
+            Kejujuran Nabi Muhammad ﷺ membuat banyak orang mempercayai
+            beliau. Salah satu orang yang mendengar tentang kejujuran
+            beliau adalah <strong>Khadijah binti Khuwailid</strong>,
+            seorang wanita terpandang dan pedagang yang sukses.
+        </p>
+
+        <p>
+            Khadijah kemudian meminta Nabi Muhammad ﷺ untuk membawa
+            barang dagangannya dalam sebuah perjalanan. Nabi Muhammad ﷺ
+            menjalankan tugas tersebut dengan penuh tanggung jawab.
+            Setelah mengetahui akhlak dan kejujuran beliau, Khadijah
+            tertarik untuk menikah dengan Nabi Muhammad ﷺ.
+        </p>
+
+        <p>
+            Pada saat itu, Nabi Muhammad ﷺ berusia sekitar 25 tahun.
+            Pernikahan beliau dengan Khadijah menjadi keluarga yang
+            penuh kasih sayang dan saling mendukung.
+        </p>
+
+        <p>
+            Nabi Muhammad ﷺ menjalani kehidupan bersama keluarganya
+            dengan sederhana. Beliau juga dikenal sebagai pribadi yang
+            suka membantu orang lain dan memperhatikan kaum miskin.
+        </p>
+
+        <p>
+            Menjelang usia 40 tahun, Nabi Muhammad ﷺ semakin sering
+            menyendiri untuk merenungkan keadaan masyarakat Makkah.
+            Pada masa itu, banyak masyarakat Arab yang menyembah berhala,
+            melakukan ketidakadilan, dan memiliki berbagai kebiasaan buruk.
+        </p>
+
+        <p>
+            Nabi Muhammad ﷺ sering pergi ke <strong>Gua Hira</strong>
+            untuk beribadah dan merenungkan kebesaran Allah SWT.
+        </p>
+
+    </div>
+
+    <div class="quote">
+        <p>
+            Kejujuran, amanah, dan tanggung jawab merupakan sifat
+            terpuji yang dapat kita teladani.
+        </p>
+    </div>
+
+    <div class="navigation">
+
+        <button class="nav-btn prev" onclick="prevPage()">
+            ← HALAMAN 1
+        </button>
+
+        <button class="nav-btn next" onclick="nextPage()">
+            LANJUT KE HALAMAN 3 →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     HALAMAN 3
+===================================================== -->
+
+<section class="page" id="page3">
+
+    <div class="page-title">
+        <h2>Awal Kenabian</h2>
+        <div class="page-number">03</div>
+    </div>
+
+    <div class="story-card">
+
+        <p>
+            Ketika Nabi Muhammad ﷺ berusia sekitar 40 tahun, datanglah
+            peristiwa yang sangat penting dalam sejarah Islam.
+        </p>
+
+        <p>
+            Pada suatu malam di Gua Hira, Malaikat Jibril AS datang kepada
+            Nabi Muhammad ﷺ membawa wahyu dari Allah SWT. Jibril AS
+            menyampaikan perintah:
+        </p>
+
+        <div class="quote">
+            <div class="arabic">اقْرَأْ</div>
+            <p>
+                <strong>"Iqra'!"</strong> yang berarti
+                <strong>"Bacalah!"</strong>
+            </p>
+        </div>
+
+        <p>
+            Wahyu pertama yang diterima Nabi Muhammad ﷺ adalah bagian
+            awal dari <strong>Surah Al-'Alaq</strong>.
+        </p>
+
+        <p>
+            Peristiwa tersebut menjadi awal kenabian dan kerasulan
+            Nabi Muhammad ﷺ. Setelah menerima wahyu, beliau pulang
+            ke rumah dalam keadaan sangat terkejut. Khadijah memberikan
+            dukungan dan menenangkan beliau.
+        </p>
+
+        <p>
+            Khadijah menjadi orang pertama yang beriman kepada
+            Nabi Muhammad ﷺ dari kalangan perempuan. Setelah itu,
+            beberapa orang terdekat beliau juga menerima Islam.
+        </p>
+
+        <p>
+            Nabi Muhammad ﷺ kemudian mulai mengajarkan bahwa hanya
+            Allah SWT yang wajib disembah. Beliau mengajak masyarakat
+            meninggalkan penyembahan terhadap berhala dan kembali
+            kepada tauhid.
+        </p>
+
+        <p>
+            Pada awalnya, dakwah dilakukan secara sembunyi-sembunyi.
+            Setelah beberapa waktu, Allah SWT memerintahkan Nabi
+            Muhammad ﷺ untuk menyampaikan dakwah secara terang-terangan.
+        </p>
+
+        <p>
+            Dakwah Nabi Muhammad ﷺ mendapat penolakan dari sebagian
+            masyarakat Quraisy. Beliau dan para pengikutnya mendapatkan
+            berbagai tekanan dan perlakuan buruk. Namun Nabi Muhammad ﷺ
+            tetap bersabar dan tidak membalas keburukan dengan keburukan.
+        </p>
+
+    </div>
+
+    <div class="navigation">
+
+        <button class="nav-btn prev" onclick="prevPage()">
+            ← HALAMAN 2
+        </button>
+
+        <button class="nav-btn next" onclick="nextPage()">
+            LANJUT KE HALAMAN 4 →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     HALAMAN 4
+===================================================== -->
+
+<section class="page" id="page4">
+
+    <div class="page-title">
+        <h2>Hijrah ke Madinah</h2>
+        <div class="page-number">04</div>
+    </div>
+
+    <div class="story-card">
+
+        <p>
+            Semakin banyak masyarakat yang menerima Islam. Namun tekanan
+            dari kaum Quraisy juga semakin berat. Karena keadaan tersebut,
+            Allah SWT memberikan jalan bagi kaum Muslimin untuk berpindah
+            ke <strong>Madinah</strong>.
+        </p>
+
+        <p>
+            Peristiwa perpindahan Nabi Muhammad ﷺ dan para sahabat dari
+            Makkah ke Madinah dikenal sebagai <strong>Hijrah</strong>.
+        </p>
+
+        <p>
+            Dalam perjalanan hijrah, Nabi Muhammad ﷺ ditemani oleh
+            <strong>Abu Bakar Ash-Shiddiq</strong>. Mereka sempat
+            bersembunyi di Gua Tsur untuk menghindari kejaran kaum Quraisy.
+        </p>
+
+        <p>
+            Setelah perjalanan yang penuh tantangan, Nabi Muhammad ﷺ
+            akhirnya tiba di Madinah. Kedatangan beliau disambut dengan
+            penuh kegembiraan oleh masyarakat Madinah.
+        </p>
+
+        <p>
+            Di Madinah, Nabi Muhammad ﷺ membangun kehidupan masyarakat
+            yang berdasarkan persaudaraan, keadilan, dan kepedulian.
+            Beliau mempersaudarakan kaum Muhajirin yang datang dari
+            Makkah dengan kaum Ansar yang tinggal di Madinah.
+        </p>
+
+        <p>
+            Nabi Muhammad ﷺ juga membangun <strong>Masjid Nabawi</strong>
+            yang menjadi pusat kegiatan umat Islam.
+        </p>
+
+        <p>
+            Di Madinah, umat Islam berkembang dan semakin kuat.
+            Nabi Muhammad ﷺ menjadi pemimpin yang tidak hanya mengajarkan
+            agama, tetapi juga memberikan contoh dalam kehidupan
+            bermasyarakat.
+        </p>
+
+        <p>
+            Beliau mengajarkan agar umat Islam saling membantu,
+            menghormati orang lain, menepati janji, berlaku adil,
+            dan menjaga perdamaian.
+        </p>
+
+    </div>
+
+    <div class="navigation">
+
+        <button class="nav-btn prev" onclick="prevPage()">
+            ← HALAMAN 3
+        </button>
+
+        <button class="nav-btn next" onclick="nextPage()">
+            LANJUT KE HALAMAN 5 →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     HALAMAN 5
+===================================================== -->
+
+<section class="page" id="page5">
+
+    <div class="page-title">
+        <h2>Fathu Makkah & Teladan</h2>
+        <div class="page-number">05</div>
+    </div>
+
+    <div class="story-card">
+
+        <p>
+            Setelah bertahun-tahun berdakwah, perjuangan Nabi Muhammad ﷺ
+            akhirnya membawa perubahan besar. Islam semakin dikenal dan
+            semakin banyak masyarakat yang menerima ajaran Islam.
+        </p>
+
+        <p>
+            Salah satu peristiwa penting adalah
+            <strong>Fathu Makkah</strong>, yaitu pembebasan Kota Makkah.
+            Nabi Muhammad ﷺ memasuki Makkah bersama kaum Muslimin.
+            Walaupun sebelumnya beliau dan para sahabat pernah mengalami
+            berbagai perlakuan buruk dari kaum Quraisy, Nabi Muhammad ﷺ
+            memilih untuk memberikan pengampunan kepada banyak orang.
+        </p>
+
+        <p>
+            Peristiwa tersebut menunjukkan sifat beliau yang penuh kasih
+            sayang dan pemaaf.
+        </p>
+
+        <p>
+            Nabi Muhammad ﷺ terus mengajarkan umatnya tentang keimanan,
+            ibadah, kejujuran, keadilan, kasih sayang, dan persaudaraan.
+            Beliau juga mengingatkan umat manusia agar selalu berbuat baik
+            kepada sesama.
+        </p>
+
+        <p>
+            Pada tahun 632 Masehi, Nabi Muhammad ﷺ melaksanakan
+            <strong>Haji Wada'</strong>, yaitu haji terakhir beliau.
+            Dalam khutbahnya, beliau menyampaikan pesan-pesan penting
+            kepada umat Islam tentang persaudaraan, keadilan, dan
+            tanggung jawab manusia di hadapan Allah SWT.
+        </p>
+
+        <p>
+            Tidak lama setelah itu, Nabi Muhammad ﷺ mengalami sakit.
+            Beliau wafat di Madinah pada usia sekitar 63 tahun.
+        </p>
+
+        <p>
+            Nabi Muhammad ﷺ meninggalkan teladan yang sangat berharga
+            bagi umat Islam. Beliau adalah contoh dalam kejujuran,
+            kesabaran, keberanian, kasih sayang, kepemimpinan,
+            dan ketakwaan kepada Allah SWT.
+        </p>
+
+    </div>
+
+
+    <div class="story-card">
+
+        <div class="page-title">
+            <h2>Kesimpulan</h2>
+        </div>
+
+        <p>
+            Kisah Nabi Muhammad ﷺ mengajarkan kita bahwa menjadi manusia
+            yang baik bukan hanya tentang memiliki kekuatan atau kekayaan,
+            tetapi tentang <strong>akhlak, kesabaran, kejujuran, dan
+            ketakwaan kepada Allah SWT</strong>.
+        </p>
+
+        <p>
+            Sebagai umat Islam, kita dapat meneladani kehidupan
+            Nabi Muhammad ﷺ dengan berkata jujur, menghormati orang lain,
+            membantu sesama, memaafkan kesalahan, serta menjalankan
+            perintah Allah SWT.
+        </p>
+
+        <div class="quote">
+
+            <div class="arabic">محمد ﷺ</div>
+
+            <p>
+                Semoga kita semua dapat menjadikan Nabi Muhammad ﷺ
+                sebagai teladan dalam kehidupan sehari-hari.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- TIMELINE -->
+
+    <div class="story-card">
+
+        <div class="page-title">
+            <h2>Ringkasan Perjalanan</h2>
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3>Tahun Gajah</h3>
+                <p>
+                    Nabi Muhammad ﷺ lahir di Makkah, sekitar tahun 570 Masehi.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3>Masa Kanak-kanak</h3>
+                <p>
+                    Diasuh oleh Halimah Sa'diyah dan kemudian kembali
+                    kepada ibunya, Aminah.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3>Al-Amin</h3>
+                <p>
+                    Sejak muda dikenal sebagai pribadi yang jujur,
+                    amanah, dan dapat dipercaya.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3>Usia Sekitar 40 Tahun</h3>
+                <p>
+                    Menerima wahyu pertama di Gua Hira melalui
+                    Malaikat Jibril AS.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3>Hijrah</h3>
+                <p>
+                    Nabi Muhammad ﷺ dan para sahabat berpindah
+                    dari Makkah menuju Madinah.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <h3>632 Masehi</h3>
+                <p>
+                    Melaksanakan Haji Wada' dan kemudian wafat
+                    di Madinah pada usia sekitar 63 tahun.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="navigation">
+
+        <button class="nav-btn prev" onclick="prevPage()">
+            ← HALAMAN 4
+        </button>
+
+        <button class="nav-btn next" onclick="goHome()">
+            ↻ KEMBALI KE AWAL
+        </button>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-title">
+        TENTANG NABI ﷺ
+    </div>
+
+    <p>
+        Media pembelajaran kisah dan keteladanan Nabi Muhammad ﷺ
+    </p>
+
+    <p style="margin-top:10px;">
+        Semoga bermanfaat dan menambah kecintaan kepada Rasulullah ﷺ.
+    </p>
+
+</footer>
+
+
+<div class="toast" id="toast">
+    Halaman berhasil dibuka
+</div>
+
+
+<script>
+
+let currentPage = 1;
+const totalPages = 5;
+
+
+/* PINDAH HALAMAN */
+
+function showPage(page){
+
+    if(page < 1) page = 1;
+    if(page > totalPages) page = totalPages;
+
+    document.querySelectorAll(".page").forEach(function(item){
+        item.classList.remove("active");
+    });
+
+    const target = document.getElementById("page" + page);
+
+    if(target){
+        target.classList.add("active");
+    }
+
+    currentPage = page;
+
+    updateProgress();
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+    showToast("Halaman " + page + " dari " + totalPages);
+}
+
+
+/* NEXT */
+
+function nextPage(){
+
+    if(currentPage < totalPages){
+        showPage(currentPage + 1);
+    }else{
+        showPage(1);
+    }
+
+}
+
+
+/* PREVIOUS */
+
+function prevPage(){
+
+    if(currentPage > 1){
+        showPage(currentPage - 1);
+    }
+
+}
+
+
+/* HOME */
+
+function goHome(){
+    showPage(1);
+}
+
+
+/* PROGRESS */
+
+function updateProgress(){
+
+    const percent = Math.round((currentPage / totalPages) * 100);
+
+    document.getElementById("progressFill").style.width =
+        percent + "%";
+
+    document.getElementById("progressText").textContent =
+        "Halaman " + currentPage + " dari " + totalPages;
+
+    document.getElementById("progressPercent").textContent =
+        percent + "%";
+}
+
+
+/* TOAST */
+
+function showToast(message){
+
+    const toast = document.getElementById("toast");
+
+    toast.textContent = message;
+    toast.classList.add("show");
+
+    clearTimeout(window.toastTimer);
+
+    window.toastTimer = setTimeout(function(){
+        toast.classList.remove("show");
+    },1800);
+}
+
+
+/* TEXT TO SPEECH */
+
+function getCurrentText(){
+
+    const page = document.getElementById("page" + currentPage);
+
+    if(!page) return "";
+
+    return page.innerText
+        .replace(/←/g,"")
+        .replace(/→/g,"")
+        .replace(/↻/g,"")
+        .replace(/AWAL/g,"")
+        .replace(/LANJUT KE HALAMAN \d+/g,"")
+        .replace(/HALAMAN \d+/g,"");
+}
+
+
+function readPage(){
+
+    if(!("speechSynthesis" in window)){
+
+        showToast("Browser tidak mendukung fitur suara");
+
+        return;
+    }
+
+    speechSynthesis.cancel();
+
+    const text = getCurrentText();
+
+    const speech = new SpeechSynthesisUtterance(text);
+
+    speech.lang = "id-ID";
+    speech.rate = .9;
+    speech.pitch = 1;
+
+    speechSynthesis.speak(speech);
+
+    showToast("Sedang membaca halaman...");
+}
+
+
+function stopReading(){
+
+    if("speechSynthesis" in window){
+        speechSynthesis.cancel();
+    }
+
+    showToast("Pembacaan dihentikan");
+}
+
+
+/* KEYBOARD NAVIGATION */
+
+document.addEventListener("keydown",function(event){
+
+    if(event.key === "ArrowRight"){
+        nextPage();
+    }
+
+    if(event.key === "ArrowLeft"){
+        prevPage();
+    }
+
+});
+
+
+/* INIT */
+
+updateProgress();
+
+</script>
+
+</body>
+</html>
